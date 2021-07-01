@@ -1,4 +1,4 @@
-﻿# BasedOnStyle:  WebKit
+# BasedOnStyle:  WebKit
 AccessModifierOffset: -2
 AlignAfterOpenBracket: DontAlign
 AlignConsecutiveAssignments: false
@@ -101,3 +101,4 @@ SpacesInSquareBrackets: false
 Standard:  Cpp11
 TabWidth:  4
 UseTab:    Never
+
