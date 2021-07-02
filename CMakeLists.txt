@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.13)
 
 # Set the project name to your project name, my project isn't very descriptive
 project(myproject CXX)
@@ -39,14 +39,16 @@ include(cmake/StaticAnalyzers.cmake)
 option(BUILD_SHARED_LIBS "Enable compilation of shared libraries" OFF)
 option(ENABLE_TESTING "Enable Test Builds" OFF)
 
-# Very basic PCH example
-option(ENABLE_PCH "Enable Precompiled Headers" ON)
-if (ENABLE_PCH)
-    # This sets a global PCH parameter, each project will build its own PCH, which
-    # is a good idea if any #define's change
-    #
-    # consider breaking this out per project as necessary
-    target_precompile_headers(project_options INTERFACE <vector> <string> <map> <utility>)
+if(${CMAKE_VERSION} VERSION_GREATER "3.15")
+    # Very basic PCH example
+    option(ENABLE_PCH "Enable Precompiled Headers" ON)
+    if (ENABLE_PCH)
+        # This sets a global PCH parameter, each project will build its own PCH, which
+        # is a good idea if any #define's change
+
+        # consider breaking this out per project as necessary
+        target_precompile_headers(project_options INTERFACE <vector> <string> <map> <utility>)
+    endif()
 endif()
 
 
