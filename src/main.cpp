@@ -7,7 +7,7 @@ static constexpr auto USAGE =
   R"(Naval Fate.
 
     Usage:
-        naval_fate ship new <name>...
+        naval_fate
         naval_fate ship <name> move <x> <y> [--speed=<kn>]
         naval_fate ship shoot <x> <y>
         naval_fate mine (set|remove) <x> <y> [--moored | --drifting]
